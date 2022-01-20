@@ -1,5 +1,5 @@
 #/usr/bin/python3
-#Programa básico para calcular N números primos
+#Programa básico para diferenciar entre local y global
 cadena1="Soy Global"
 listaA=["Uno global"]
 def imprimir():
