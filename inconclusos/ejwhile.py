@@ -2,6 +2,6 @@
 #Author Cristian Cuesta
 #Muestra de un ciclo While en Python
 cont = 0
-while cont < 5:
+while cont < 5: #contador sea menor a 5
     print("Linea de prueba N:", cont)
     cont+=1
