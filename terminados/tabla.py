@@ -12,19 +12,23 @@ Ejecuta el código y observa el resultado.
 import sys
 print(sys.argv) # argumentos enviados
 if len(sys.argv)==3:
-	filas=int(sys.argv[1])
-	columnas=int(sys.argv[2])
-	if type(filas)!=int and type(columnas)!=int:
-		print("Error ambos parámetros ingresados deben ser números enteros entre el 1 al 9")
-	else:
-		if filas>9 or filas<1 or columnas<1 or columnas >9:
-			print("Valores fuera de rango")
+	try:
+		filas=int(sys.argv[1])
+		columnas=int(sys.argv[2])
+		if type(filas)!=int or type(columnas)!=int:
+			print("Error ambos parámetros ingresados deben ser números enteros entre el 1 al 9")
 		else:
-			print("filas:", filas, ", columnas:", columnas)
-			for f in range (filas):
-				print(" ")
-				for c in range (columnas):
-					print(" * ", end=' ')
+			if filas>9 or filas<1 or columnas<1 or columnas >9:
+				print("Valores fuera de rango")
+			else:
+				print("filas:", filas, ", columnas:", columnas)
+				for f in range (filas):
+					print(" ")
+					for c in range (columnas):
+						print(" * ", end=' ')
+	except ValueError:
+		print("Verifique que los argumentos son números enteros positivos")
+		print("Ej.: 'python tablas.py 4 4' ")
 else:
 	print(""" Introduce todos los argumentos necesarios
 		por Ej.:
